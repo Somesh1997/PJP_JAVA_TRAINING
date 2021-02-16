@@ -1,0 +1,79 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <title>Xena Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: yellow;
+			margin: 1cm;
+			border: 2px solid red;
+			padding: 1cm;
+			border-radius: 20px;
+        }
+        input {
+            text-transform: uppercase;
+        }
+        table {
+            width: 60%;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.forms['register']['name'].value;
+            var age = document.forms['register']['age'].value;
+            var email = document.forms['register']['email'].value;
+            if(!name.match(/^[A-Za-z]+$/)) {
+				alert("Name:\t* CHARACTERS ONLY");
+			}
+            if(parseInt(age) < 18) {
+                alert("Age:\t* EQUAL OR GREATER THAN 18");
+            }
+            if(!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                alert("Email ID:\t* INVALID EMAIL ID");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+	<center><H1> Xena Events </H1></center>
+        <img src="logo.png" width="75" height="75">
+        <form name="register" onsubmit="validateForm()"> 
+        <center><H1>Do join this hot balloon riding event with Xena Event from 28th Feb for 5 days</H1></center>
+<br>
+<br>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" name="age" required></td>
+                </tr>
+                <tr>
+                    <td>Email ID:</td>
+                    <td><input type="text" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>
+                        <input list="venue" id="ice-cream-choice" name="ice-cream-choice" required />
+                        <datalist id="venue">
+                            <option value="Bangalore">
+                            <option value="Rajkot">
+                            <option value="Vijag">
+                        </datalist>
+                    </td>
+                </tr>
+                <tr style="height: 12pt;"></tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
